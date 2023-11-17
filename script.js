@@ -36,6 +36,7 @@ const amy = {
 
 const prices = [34, 5, 2];
 let pricesSale = (prices[0] * 30) / 100;
+const shippingCost = 50;
 
 if (marco.isAmbassador === true) {
     console.log(prices[0] - pricesSale)
@@ -54,10 +55,11 @@ if (amy.isAmbassador === true) {
 } else {
     console.log(prices[2])
 };
-const shippingCost = 50
-let totalShippingCost = (shippingCost > 100) ? 0 : shippingCost;
-let totalShippingCost2 = totalShippingCost + prices[1];
-console.log(totalShippingCost2)
+
+
+let parzialShippingCost = (shippingCost > 100) ? 0 : shippingCost;
+let totalShippingCost = parzialShippingCost + prices[1];
+console.log(totalShippingCost)
 let utenteCheEffettuaLAcquisto = amy //cambia il valore qui per provare se il tuo algoritmo funziona!
 
 let array = [];
@@ -66,9 +68,9 @@ array.push(marco, paul, amy);
 for (let i = 0; i < array.length; i++) {
 
     if (array[i].isAmbassador) {
-        console.log(array[i].name + " è ambassador")
+        console.log(array[i].name + " " + array[i].lastName + " è ambassador")
     } else {
-        console.log(array[i].name + " non è ambassador")
+        console.log(array[i].name + " " + array[i].lastName + " non è ambassador")
     }
 }
 
